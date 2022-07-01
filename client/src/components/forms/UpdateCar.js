@@ -13,7 +13,7 @@ const UpdateCar = (props) => {
       width: "220px",
     },
   });
-  let styles = getStyles;
+  const styles = getStyles();
   const [id] = useState(props.id);
   const [year] = useState(props.year);
   const [make] = useState(props.make);
@@ -158,7 +158,9 @@ const UpdateCar = (props) => {
           </Button>
         )}
       </Form.Item>
-      <Button onClick={props.onButtonClick}>Cancel</Button>
+      <Button onClick={props.onButtonClick} style={styles.input}>
+        Cancel
+      </Button>
     </Form>
   );
 };
