@@ -8,12 +8,12 @@ import { v4 as uuidv4 } from "uuid";
 import { ADD_PERSON, GET_PERSONS } from "../../queries";
 
 const AddPerson = () => {
-  let [id] = useState(uuidv4);
+  let [id] = useState(uuidv4());
   const [addPerson] = useMutation(ADD_PERSON);
 
   const onFinish = (values) => {
     const { firstName, lastName } = values;
-    id = new Date().getTime().toString(); //reset is required, else it is using common id for all.
+    id += new Date().getTime().toString(); //reset is required, else it is using common id for all.
     addPerson({
       variables: {
         id,

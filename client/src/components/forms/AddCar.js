@@ -17,7 +17,7 @@ const AddCar = () => {
   const onFinish = (values) => {
     const { year, make, model, price, personId } = values;
     const person = data.persons.find((p) => p.id === personId);
-    id = new Date().getTime().toString(); //reset is required, else it is using common id for all.
+    id += new Date().getTime().toString(); //reset is required, else it is using common id for all.
     addCar({
       variables: {
         id,
@@ -90,12 +90,7 @@ const AddCar = () => {
       >
         <Input placeholder="i.e. 38000" />
       </Form.Item>
-      {/* <Form.Item
-        name="personId"
-        rules={[{ required: true, message: "Please input your personId!" }]}
-      >
-        <Input placeholder="i.e. 2" />
-      </Form.Item> */}
+
       <Form.Item
         name="personId"
         rules={[{ required: true, message: "Please input your personId!" }]}

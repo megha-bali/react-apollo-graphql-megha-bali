@@ -4,12 +4,6 @@ import { useState } from "react";
 import RemoveCar from "../buttons/RemoveCar";
 import UpdateCar from "../forms/UpdateCar";
 
-const getStyles = () => ({
-  card: {
-    // width: "500px",
-  },
-});
-
 const Car = (props) => {
   const [id] = useState(props.id);
   const [year, setYear] = useState(props.year);
@@ -20,7 +14,6 @@ const Car = (props) => {
   const [person, setPerson] = useState(props.person);
 
   const [editMode, setEditMode] = useState(false);
-  const styles = getStyles();
 
   const handleButtonClick = () => {
     setEditMode(!editMode);
@@ -71,7 +64,6 @@ const Car = (props) => {
             <EditOutlined key="edit" onClick={handleButtonClick} />,
             <RemoveCar id={id} />,
           ]}
-          style={styles.card}
         >
           {make} {model} {year} ({person.firstName} {person.lastName})<br />
           {"Price: $" +

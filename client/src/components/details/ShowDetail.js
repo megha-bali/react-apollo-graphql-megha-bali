@@ -1,4 +1,4 @@
-import { useLazyQuery, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { Card } from "antd";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
@@ -21,9 +21,6 @@ const ShowDetail = () => {
   const { loading, error, data } = useQuery(GET_PERSON_WITH_CARS, {
     variables: { id: id },
   });
-
-  //setList(data.personWithCars);
-  //   if (!loading) console.log(data);
 
   return (
     <>
