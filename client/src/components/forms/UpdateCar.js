@@ -4,6 +4,16 @@ import { useEffect, useState } from "react";
 import { GET_CARS, GET_PERSONS, UPDATE_CAR } from "../../queries";
 
 const UpdateCar = (props) => {
+  const getStyles = () => ({
+    input: {
+      margin: "5px",
+    },
+    select: {
+      margin: "5px",
+      width: "220px",
+    },
+  });
+  let styles = getStyles;
   const [id] = useState(props.id);
   const [year] = useState(props.year);
   const [make] = useState(props.make);
@@ -87,6 +97,7 @@ const UpdateCar = (props) => {
         rules={[{ required: true, message: "Please input year!" }]}
       >
         <Input
+          style={styles.input}
           placeholder="i.e. 2022"
           onChange={(e) => updateStateVariable("year", e.target.value)}
         />
@@ -96,6 +107,7 @@ const UpdateCar = (props) => {
         rules={[{ required: true, message: "Please input make!" }]}
       >
         <Input
+          style={styles.input}
           placeholder="i.e. Honda"
           onChange={(e) => updateStateVariable("make", e.target.value)}
         />
@@ -105,15 +117,18 @@ const UpdateCar = (props) => {
         rules={[{ required: true, message: "Please input model!" }]}
       >
         <Input
+          style={styles.input}
           placeholder="i.e. CRV"
           onChange={(e) => updateStateVariable("model", e.target.value)}
         />
       </Form.Item>
       <Form.Item
+        style={styles.input}
         name="price"
         rules={[{ required: true, message: "Please input price!" }]}
       >
         <Input
+          style={styles.input}
           placeholder="i.e. 38000"
           onChange={(e) => updateStateVariable("price", e.target.value)}
         />
@@ -123,8 +138,8 @@ const UpdateCar = (props) => {
         rules={[{ required: true, message: "Please input your personId!" }]}
       >
         <Select
+          style={styles.select}
           placeholder="Select Person"
-          style={{ width: "205px" }}
           onChange={(v) => updateStateVariable("personId", v)}
           allowClear
         >
@@ -138,7 +153,7 @@ const UpdateCar = (props) => {
 
       <Form.Item shouldUpdate={true}>
         {() => (
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" htmlType="submit" style={styles.input}>
             Update Car
           </Button>
         )}
