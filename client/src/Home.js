@@ -11,14 +11,14 @@ const Home = () => {
   if (loading) return "Loading.....";
   if (error) return `Error! ${error.message}`;
   return (
-    <div class="hContainer">
-      <div class="hc-child">
+    <div className="hContainer">
+      <div className="hc-child">
         <Title name="People" />
         <AddPerson />
         <Persons />
       </div>
       {data.persons.length > 0 ? (
-        <div class="hc-child">
+        <div className="hc-child">
           <Title name="Cars" />
           <AddCar />
           <Cars />
