@@ -16,7 +16,7 @@ const Persons = (props) => {
 
   if (loading) return "Loading.....";
   if (error) return `Error! ${error.message}`;
-  console.log("???", data.persons);
+
   return (
     <div style={styles.list}>
       <List grid={{ gutter: 20, column: 1 }} style={styles.list}>
